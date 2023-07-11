@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Compress web static package
+"""generates a .tgz archive from the contents of the web_static folder
+
 """
 from fabric.api import local
 from datetime import datetime
@@ -13,7 +14,7 @@ def do_pack():
     # Get current time
     now = datetime.now()
     now = now.strftime('%Y%m%d%H%M%S')
-    archive_path = 'versions/web_static_' + now + '.tgz'
+    archive_path = 'versions/web_static_<year><month><day><hour><minute><second>.tgz
 
     # Create archive
     local('mkdir -p versions/')

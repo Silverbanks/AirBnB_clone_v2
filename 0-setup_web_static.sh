@@ -17,7 +17,7 @@ echo "<!DOCTYPE html>
     Holberton School
   </body>
 </html>" > /data/web_static/releases/test/index.html > /dev/null
-sed -i '/server_name _/a location /redirect_me { rewrite ^ https://www.youtube.com/@silver_banks permanent; }' /etc/nginx/sites-available/default
+sed -i '/server_name _/a location /redirect_me { rewrite ^ https://www.youtube.com/channel/UCOGuCTcfkhxVZSSPyC-Iq1A permanent; }' /etc/nginx/sites-available/default
 ln -sf /data/web_static/releases/test/ /data/web_static/current
 
 # set permissions
