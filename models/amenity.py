@@ -10,7 +10,13 @@ class Amenity(BaseModel, Base):
     Attributes:
         name: input name
     """
+    if models.storage_t == 'db':
     __tablename__ = 'amenities'
     name = Column(String(128), nullable=False)
-
     # place_amenities = relationship('Place', secondary='place_amenity')
+else:
+    name = ""
+
+    def _init_(self, *args, **kwargs):
+        """initializes Amenity"""
+        super()._init_(*args, **kwargs)
